@@ -3,13 +3,10 @@ pipeline {
   stages {
     stage('Get_Sources') {
       agent {
-        docker {
-          image 'centos/centos7'
+        node {
+          label 'min-centos-7-x64'
         }
 
-      }
-      environment {
-        centos = '7'
       }
       steps {
         sh '''sudo yum -y install wget
