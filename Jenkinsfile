@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'centos.centos7'
+    }
+
+  }
   stages {
     stage('Get_Sources') {
       agent {
